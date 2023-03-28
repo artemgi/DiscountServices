@@ -14,8 +14,9 @@
 * Liquibase
 
 **Запуск**
-
-`docker-compose up -d --build`
+1. git clone git@github.com:artemgi/DiscountServices.git
+2. git submodule update --init --recursive
+3. `docker-compose up -d --build`
 
 **Как использовать**
 
