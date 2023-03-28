@@ -1,0 +1,3 @@
+[submodule "Discount"]
+	path = Discount
+	url = git@github.com:artemgi/Discount.git
