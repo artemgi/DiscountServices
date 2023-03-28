@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:13'
+    container_name: 'java-postgres'
+    environment:
+      - 'POSTGRES_USER=root'
+      - 'POSTGRES_PASSWORD=123'
+      - 'POSTGRES_HOST_AUTH_METHOD=trust'
+      - 'POSTGRES_DB=postgres'
+  app1:
+    build: ./Discount
+    container_name: 'java-app'
+    ports:
+      - "8080:8080"
+  app2:
+    build: ./SqlScriptRunner
+    container_name: 'java-app-script-runner'
+    ports:
+      - "8081:8081"
+    depends_on:
+      - app1
